@@ -1,838 +1,1169 @@
+﻿<!-- Images folder: place all images in /images/ relative to index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anna Lebedeva — Digital Marketing Strategy & Solutions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Lebedeva &mdash; Marketing Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --cream: #F5F2ED;
-    --black: #1A1814;
-    --mid: #6B6760;
-    --accent: #C4714A;
-    --border: #DDD9D2;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --mono: 'DM Mono', monospace;
-    --sans: 'DM Sans', sans-serif;
-  }
+    :root {
+      --bg: #F5F2ED;
+      --black: #1A1814;
+      --mid: #6B6760;
+      --accent: #C4714A;
+      --border: #DDD9D2;
+      --dark-card: #2C2C2A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
 
-  html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--cream);
-    color: var(--black);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+    body {
+      background: var(--bg);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 3rem;
-    background: rgba(245, 242, 237, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 0.5px solid var(--border);
-  }
+    /* ================================================================
+       NAVIGATION
+    ================================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(245, 242, 237, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
 
-  .nav-name {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--black);
-    text-decoration: none;
-  }
+    /* ================================================================
+       HERO
+    ================================================================ */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      padding-top: 64px;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem 3rem;
+      border-right: 0.5px solid var(--border);
+    }
+    .photo-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      margin-bottom: 2.5rem;
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      max-width: 36ch;
+      line-height: 1.5;
+    }
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .hero-contact a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .hero-contact a:hover { color: var(--accent); }
+    .hero-right {
+      display: flex;
+      align-items: flex-end;
+      padding: 4rem 3rem;
+    }
+    .hero-bio-split {
+      display: grid;
+      grid-template-columns: 1fr 0.5px 1fr;
+      gap: 0 2.5rem;
+      align-items: start;
+      width: 100%;
+    }
+    .hero-bio-divider {
+      align-self: stretch;
+      background: var(--border);
+      width: 0.5px;
+    }
+    .hero-bio-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+      line-height: 1.65;
+      color: var(--black);
+    }
 
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+    /* ================================================================
+       NUMBERS BAR
+    ================================================================ */
+    .numbers-bar {
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .stat-item {
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      border-right: 0.5px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.45rem;
+    }
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
 
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+    /* ================================================================
+       COMPANIES STRIP
+    ================================================================ */
+    .companies-section {
+      padding: 1rem 0 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .companies-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0 3rem;
+      margin-bottom: 0.85rem;
+    }
+    .companies-track-wrap {
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0.9rem 0;
+      overflow: hidden;
+    }
+    .companies-track {
+      display: flex;
+      gap: 5rem;
+      white-space: nowrap;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+      align-items: center;
+      padding: 0 2.5rem;
+    }
+    .companies-track:hover { animation-play-state: paused; }
+    .company-name {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
 
-  .nav-links a:hover { color: var(--black); }
+    /* ================================================================
+       SECTION SHARED STYLES
+    ================================================================ */
+    .section-header {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      padding: 2rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      align-items: end;
+      gap: 2rem;
+    }
+    .section-number {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--mid);
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.1;
+    }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 64px;
-  }
+    /* ================================================================
+       SKILLS
+    ================================================================ */
+    #skills { border-top: 0.5px solid var(--border); }
+    .skills-columns {
+      display: grid;
+      grid-template-columns: 1fr 0.5px 1fr;
+    }
+    .skills-col { padding: 2.5rem 3rem; }
+    .skills-col-divider { background: var(--border); }
+    .skills-col-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .skill-item {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--black);
+      line-height: 1.4;
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+    }
+    .skill-dash {
+      color: var(--accent);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
 
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 5rem 3rem 5rem 3rem;
-    border-right: 0.5px solid var(--border);
-  }
+    /* ================================================================
+       SELECTED WORK
+    ================================================================ */
+    #work { border-top: 0.5px solid var(--border); }
+    .work-card { border-bottom: 0.5px solid var(--border); }
+    .card-header {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+    }
+    .card-header[role="button"] { cursor: pointer; }
+    .card-header[role="button"]:hover { background: rgba(196, 113, 74, 0.025); }
+    .card-strip {
+      background: var(--dark-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 0;
+      min-height: 180px;
+    }
+    .card-strip-text {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #888780;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing: 0.14em;
+    }
+    .card-body {
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .card-tag-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .card-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-title {
+      font-family: var(--sans);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+    .card-desc {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--mid);
+      max-width: 65ch;
+      line-height: 1.7;
+    }
+    .card-stats {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+    }
+    .card-expand-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      margin-top: 0.4rem;
+    }
+    .chevron {
+      display: inline-block;
+      transition: transform 0.4s ease;
+      font-size: 0.85rem;
+    }
+    .work-card.is-expanded .chevron { transform: rotate(180deg); }
+    .card-expand-area {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .work-card.is-expanded .card-expand-area { max-height: 6000px; }
+    .card-expand-inner { border-top: 0.5px solid var(--border); }
 
-  .hero-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2rem;
-  }
+    /* Role blocks */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .role-block { padding: 2.5rem 3rem; }
+    .role-block:first-child { border-right: 0.5px solid var(--border); }
+    .role-period {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .role-location {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+    .role-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .role-content {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.75;
+    }
 
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(4rem, 8vw, 7.5rem);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-  }
+    /* Project tiles */
+    .projects-section { padding: 2.5rem 3rem; }
+    .projects-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+    }
+    .project-tile { background: var(--bg); overflow: hidden; }
+    .tile-images--1 .tile-img-wrap { height: 200px; }
+    .tile-images--2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: var(--border);
+    }
+    .tile-images--2 .tile-img-wrap { height: 200px; }
+    .tile-img-wrap {
+      background: var(--dark-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .tile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .img-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--mid);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .tile-img-wrap.img-error img { display: none; }
+    .tile-body { padding: 1.5rem; }
+    .tile-tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .tile-title {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .tile-desc {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .tile-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tile-chip {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      border: 0.5px solid var(--border);
+      border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+    }
+    .coming-soon-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border: 0.5px solid var(--border);
+      border-radius: 50px;
+      padding: 0.2rem 0.75rem;
+      background: rgba(107, 103, 96, 0.07);
+    }
 
-  .hero-name em {
-    font-style: italic;
-    color: var(--accent);
-  }
+    /* ================================================================
+       EXPERIENCE
+    ================================================================ */
+    #experience { border-top: 0.5px solid var(--border); }
+    .experience-list { border-bottom: 0.5px solid var(--border); }
+    .exp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 1.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      transition: background 0.2s;
+      align-items: center;
+      gap: 2rem;
+    }
+    .exp-row:last-child { border-bottom: none; }
+    .exp-row:hover { background: rgba(196, 113, 74, 0.025); }
+    .exp-left { display: flex; flex-direction: column; gap: 0.2rem; }
+    .exp-company {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .exp-role-date {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+    .exp-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .exp-desc {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+    .exp-stat {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border: 0.5px solid var(--accent);
+      border-radius: 2px;
+      padding: 0.25rem 0.6rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
 
-  .hero-tagline {
-    margin-top: 2.5rem;
-    font-size: 1rem;
-    color: var(--mid);
-    max-width: 36ch;
-    line-height: 1.7;
-  }
+    /* ================================================================
+       CONTACT
+    ================================================================ */
+    #contact { border-top: 0.5px solid var(--border); }
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 0.5px solid var(--border);
+    }
+    .contact-left {
+      padding: 4rem 3rem;
+      border-right: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+    .contact-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+      font-weight: 300;
+      line-height: 1.45;
+      max-width: 28ch;
+    }
+    .contact-right {
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .contact-line { display: flex; flex-direction: column; gap: 0.25rem; }
+    .contact-type {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .contact-value {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      font-weight: 300;
+      color: var(--black);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-value:hover { color: var(--accent); }
 
-  .hero-contact {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 1.75rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-text {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+    }
 
-  .hero-contact a {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    color: var(--mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+    /* ================================================================
+       FADE-IN ANIMATION
+    ================================================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
 
-  .hero-contact a:hover { color: var(--accent); }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 5rem 3rem;
-    position: relative;
-  }
-
-  .hero-intro {
-    font-family: var(--serif);
-    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--black);
-    max-width: 38ch;
-  }
-
-  .hero-intro strong {
-    font-weight: 400;
-    border-bottom: 1px solid var(--accent);
-  }
-
-  .scroll-hint {
-    margin-top: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--mid);
-  }
-
-  .scroll-line {
-    width: 40px;
-    height: 0.5px;
-    background: var(--mid);
-  }
-
-  /* SECTIONS */
-  section { border-top: 0.5px solid var(--border); }
-
-  .section-header {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    padding: 2rem 3rem;
-    border-bottom: 0.5px solid var(--border);
-    align-items: center;
-  }
-
-  .section-number {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--mid);
-  }
-
-  .section-title {
-    font-family: var(--serif);
-    font-size: 2.2rem;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-  }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .skills-col {
-    padding: 3rem 3rem;
-  }
-
-  .skills-col:first-child {
-    border-right: 0.5px solid var(--border);
-  }
-
-  .skills-category {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    color: var(--black);
-  }
-
-  .skills-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .skills-list li {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    color: var(--mid);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .skills-list li::before {
-    content: '';
-    width: 18px;
-    height: 0.5px;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
-
-  /* PROJECTS */
-  .project {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    border-bottom: 0.5px solid var(--border);
-    transition: background 0.2s;
-  }
-
-  .project:hover { background: rgba(196, 113, 74, 0.03); }
-
-  .project-meta {
-    padding: 2.5rem 3rem;
-    border-right: 0.5px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .project-client {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.2;
-  }
-
-  .project-category {
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-top: 0.25rem;
-  }
-
-  .project-body {
-    padding: 2.5rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--mid);
-    line-height: 1.75;
-  }
-
-  .project-desc p { margin-bottom: 0.75rem; }
-
-  .project-task {
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 0.5rem;
-  }
-
-  .project-deliverables {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .project-deliverables li {
-    font-size: 0.82rem;
-    color: var(--mid);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-
-  .project-deliverables li::before {
-    content: '→';
-    color: var(--accent);
-    font-size: 0.72rem;
-    flex-shrink: 0;
-    margin-top: 0.1em;
-  }
-
-  .project-results {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 0.5px solid var(--border);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .result-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .result-value {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--black);
-  }
-
-  .result-label {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mid);
-  }
-
-  /* CONTACT */
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-  }
-
-  .contact-left {
-    border-right: 0.5px solid var(--border);
-    padding: 3rem;
-  }
-
-  .contact-right {
-    padding: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .contact-line {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .contact-type {
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    width: 80px;
-    flex-shrink: 0;
-  }
-
-  .contact-value {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--black);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .contact-value:hover { color: var(--accent); }
-
-  /* FOOTER */
-  footer {
-    border-top: 0.5px solid var(--border);
-    padding: 1.5rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer span {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--mid);
-  }
-
-  /* FADE IN */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 0.5px solid var(--border); }
-    .hero-right { padding: 2.5rem 1.5rem; }
-    .section-header { grid-template-columns: 1fr; padding: 1.5rem; gap: 0.25rem; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .skills-col:first-child { border-right: none; border-bottom: 0.5px solid var(--border); }
-    .skills-col { padding: 2rem 1.5rem; }
-    .project { grid-template-columns: 1fr; }
-    .project-meta { padding: 1.5rem; border-right: none; border-bottom: 0.5px solid var(--border); }
-    .project-body { padding: 1.5rem; grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; }
-    .contact-left { border-right: none; border-bottom: 0.5px solid var(--border); padding: 1.5rem; }
-    .contact-right { padding: 1.5rem; }
-    footer { padding: 1.25rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
-</style>
+    /* ================================================================
+       MOBILE RESPONSIVE
+    ================================================================ */
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left {
+        border-right: none;
+        border-bottom: 0.5px solid var(--border);
+        padding: 3rem 1.5rem;
+      }
+      .hero-right { padding: 3rem 1.5rem; }
+      .hero-bio-split { grid-template-columns: 1fr; }
+      .hero-bio-divider { display: none; }
+      .numbers-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { border-bottom: 0.5px solid var(--border); }
+      .stat-item:nth-child(2n) { border-right: none; }
+      .stat-item:nth-child(5) { grid-column: span 2; }
+      .stat-item:last-child { border-bottom: none; }
+      .section-header {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 0.4rem;
+      }
+      .skills-columns { grid-template-columns: 1fr; }
+      .skills-col-divider { height: 0.5px; width: 100%; }
+      .skills-col { padding: 2rem 1.5rem; }
+      .card-header { grid-template-columns: 60px 1fr; }
+      .card-body { padding: 1.5rem; }
+      .card-strip { min-height: 140px; }
+      .card-strip-text { font-size: 0.72rem; }
+      .roles-grid { grid-template-columns: 1fr; }
+      .role-block:first-child {
+        border-right: none;
+        border-bottom: 0.5px solid var(--border);
+      }
+      .role-block { padding: 2rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .projects-section { padding: 1.5rem; }
+      .exp-row {
+        grid-template-columns: 1fr;
+        padding: 1.25rem 1.5rem;
+        gap: 0.75rem;
+      }
+      .exp-right { flex-direction: column; align-items: flex-start; }
+      .contact-body { grid-template-columns: 1fr; }
+      .contact-left {
+        border-right: none;
+        border-bottom: 0.5px solid var(--border);
+        padding: 2.5rem 1.5rem;
+      }
+      .contact-right { padding: 2.5rem 1.5rem; }
+      footer {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-name">Anna Lebedeva</a>
+<!-- ================================================================
+     NAVIGATION
+================================================================ -->
+<nav class="nav">
+  <a href="#" class="nav-brand">Anna Lebedeva</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#freelance">Freelance</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ================================================================
+     HERO
+================================================================ -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-label">Digital Marketing Strategy &amp; Solutions</div>
-    <h1 class="hero-name">Anna<br><em>Lebedeva</em></h1>
-    <p class="hero-tagline">Creative and analytical marketer with a passion for ethical digital marketing and building healthy communities online.</p>
+  <div class="hero-left fade-in">
+    <div class="photo-placeholder">Your photo</div>
+    <h1 class="hero-name">Anna Lebedeva</h1>
+    <p class="hero-title">Marketing Manager &mdash; Digital Strategy &amp; Growth</p>
     <div class="hero-contact">
       <a href="mailto:a-lebedeva@hotmail.com">a-lebedeva@hotmail.com</a>
-      <a href="https://linkedin.com/in/lebedevaanna" target="_blank">linkedin.com/in/lebedevaanna</a>
+      <a href="https://linkedin.com/in/lebedevaanna" target="_blank" rel="noopener noreferrer">linkedin.com/in/lebedevaanna</a>
       <a href="tel:+61413561144">+61 413 561 144</a>
     </div>
   </div>
-  <div class="hero-right">
-    <p class="hero-intro">I design <strong>powerful marketing strategies</strong> that help businesses align their efforts, grow long-term competitiveness, and build healthy communities.</p>
-    <div class="scroll-hint">
-      <span class="scroll-line"></span>
-      <span>Scroll to explore</span>
+  <div class="hero-right fade-in" style="transition-delay:0.15s">
+    <div class="hero-bio-split">
+      <p class="hero-bio-text">Creative and analytical marketing leader with 10+ years of experience building revenue-driven marketing engines across fintech, SaaS, energy, and retail.</p>
+      <div class="hero-bio-divider"></div>
+      <p class="hero-bio-text">I design full-funnel strategies that grow acquisition, reduce CAC, and build lasting brand communities.</p>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ================================================================
+     NUMBERS BAR
+================================================================ -->
+<div class="numbers-bar fade-in">
+  <div class="stat-item">
+    <span class="stat-number">10+</span>
+    <span class="stat-label">Years experience</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">75%</span>
+    <span class="stat-label">Customer acquisition growth</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">$3M+</span>
+    <span class="stat-label">Budget managed</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">324%</span>
+    <span class="stat-label">Brand search increase</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">4,000+</span>
+    <span class="stat-label">MQLs delivered</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     COMPANIES STRIP
+================================================================ -->
+<div class="companies-section fade-in">
+  <p class="companies-label">Brands I&#39;ve worked with</p>
+  <div class="companies-track-wrap">
+    <div class="companies-track">
+      <span class="company-name">CoinFlip</span>
+      <span class="company-name">BP</span>
+      <span class="company-name">Jemena</span>
+      <span class="company-name">iSpring</span>
+      <span class="company-name">Cygnett</span>
+      <span class="company-name">Mazari Villas</span>
+      <span class="company-name">Rove</span>
+      <span class="company-name">Sunflower Corp</span>
+      <span class="company-name">UGG</span>
+      <span class="company-name">CoinFlip</span>
+      <span class="company-name">BP</span>
+      <span class="company-name">Jemena</span>
+      <span class="company-name">iSpring</span>
+      <span class="company-name">Cygnett</span>
+      <span class="company-name">Mazari Villas</span>
+      <span class="company-name">Rove</span>
+      <span class="company-name">Sunflower Corp</span>
+      <span class="company-name">UGG</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     SKILLS
+================================================================ -->
 <section id="skills">
   <div class="section-header fade-in">
     <span class="section-number">01 / Skills</span>
     <h2 class="section-title">What I do</h2>
   </div>
-  <div class="skills-grid">
+  <div class="skills-columns">
     <div class="skills-col fade-in">
-      <h3 class="skills-category">Digital Marketing</h3>
-      <ul class="skills-list">
-        <li>Campaign Strategy</li>
-        <li>Content Strategy</li>
-        <li>Content Crafting &amp; Editing</li>
-        <li>Search Engine Marketing</li>
-        <li>Digital Media Strategy</li>
-        <li>Search Engine Optimisation</li>
-        <li>Email Marketing</li>
-        <li>Analytics</li>
-        <li>Ads Management</li>
-        <li>UX Design</li>
-        <li>Affiliate Marketing</li>
-        <li>Influencer Marketing</li>
-      </ul>
+      <p class="skills-col-label">Digital Marketing</p>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Campaign Strategy</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Content Strategy &amp; Production</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Content Crafting &amp; Editing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Search Engine Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Digital Media Strategy</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>SEO</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Email &amp; SMS Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Analytics &amp; Reporting</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Paid Ads Management (Meta, Google)</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>UX Design</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Affiliate Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Influencer Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Lifecycle &amp; Retention Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Demand Generation</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Go-to-Market Strategy</div>
     </div>
-    <div class="skills-col fade-in">
-      <h3 class="skills-category">Product Management</h3>
-      <ul class="skills-list">
-        <li>Product Design</li>
-        <li>Forecasting</li>
-        <li>Promotional Cycle Management</li>
-        <li>KPI Analytics</li>
-        <li>Customer Data Analytics</li>
-        <li>Systems Optimisation</li>
-        <li>Range Planning</li>
-      </ul>
+    <div class="skills-col-divider"></div>
+    <div class="skills-col fade-in" style="transition-delay:0.1s">
+      <p class="skills-col-label">Product &amp; Commercial</p>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Product Marketing</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Range Planning &amp; Management</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Promotional Cycle Management</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>In-store POS &amp; Physical Execution</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Shelf Wobblers &amp; Print Asset Production</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Supplier &amp; Vendor Management</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Forecasting</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>KPI Analytics</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Customer Data Analytics</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Budget Management ($3M+)</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Team Leadership &amp; Mentoring</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Agency &amp; Contractor Management</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Stakeholder Reporting</div>
+      <div class="skill-item"><span class="skill-dash">&mdash;</span>Retail Operations</div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- ================================================================
+     SELECTED WORK
+================================================================ -->
+<section id="work">
   <div class="section-header fade-in">
-    <span class="section-number">02 / Projects</span>
-    <h2 class="section-title">Selected work</h2>
+    <span class="section-number">02 / Selected Work</span>
+    <h2 class="section-title">Proof of work</h2>
   </div>
 
-  <!-- Wild Bean Cafe -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Wild Bean Cafe</div>
-      <div class="project-category">BP / 4 years</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>Wild Bean Cafe offers food and beverages for motorists across Australia, with freshly baked goods and barista-prepared coffees at BP service stations nationwide.</p>
-        <p>Supporting the Australia sales and marketing team over 4 years — from early project development and operational support through to marketing, offer development, and innovation.</p>
+  <!-- CARD 1: BP AUSTRALIA (expandable) -->
+  <div class="work-card fade-in" id="card-bp">
+    <div class="card-header" role="button" aria-expanded="false" aria-controls="bp-expand" onclick="toggleCard('card-bp')">
+      <div class="card-strip">
+        <span class="card-strip-text">BP Australia</span>
       </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Digital channel content</li>
-          <li>Marketing promo cycle</li>
-          <li>Paid campaign planning</li>
-          <li>Range management</li>
-          <li>Supplier relationships</li>
-          <li>Content for internal use &amp; training</li>
-          <li>Content for external use &amp; PR</li>
-        </ul>
+      <div class="card-body">
+        <div class="card-tag-row">
+          <span class="card-tag">Melbourne &amp; Sydney &middot; 2016&ndash;2020 &middot; Two roles</span>
+        </div>
+        <h3 class="card-title">BP Australia</h3>
+        <p class="card-desc">A four-year tenure spanning two distinct roles &mdash; retail network operations managing 20 stores across Greater Sydney, followed by marketing and product coordination leading major campaigns, product range management, and brand partnerships across Australia.</p>
+        <p class="card-stats">+17% Cafe sales &nbsp;&middot;&nbsp; 324% Brand search growth &nbsp;&middot;&nbsp; 300+ Influencers directed &nbsp;&middot;&nbsp; 20 Stores managed</p>
+        <button class="card-expand-btn" type="button">View work <span class="chevron">&#8595;</span></button>
+      </div>
+    </div>
+    <div class="card-expand-area" id="bp-expand">
+      <div class="card-expand-inner">
+
+        <!-- Role blocks -->
+        <div class="roles-grid">
+          <div class="role-block">
+            <p class="role-period">May 2016 &ndash; December 2018</p>
+            <p class="role-location">Greater Sydney Area</p>
+            <h4 class="role-title">Business Manager</h4>
+            <p class="role-content">Supported 20 FMCG BP stores reporting directly to state management. Responsibilities spanned retail promotional support, marketing campaign implementation, sales and campaign performance review, POS and distribution management, and cross-functional collaboration with agency and trade partners. Provided operational support for BP network development including fuel station construction and new retail store launches across the Sydney network. Led recruitment, training, performance management, and development of a team of 20 retail staff.</p>
+          </div>
+          <div class="role-block">
+            <p class="role-period">January 2019 &ndash; December 2020</p>
+            <p class="role-location">Melbourne, Victoria</p>
+            <h4 class="role-title">Marketing &amp; Product Coordinator</h4>
+            <p class="role-content">Drove marketing and product development across a diverse portfolio within BP&#39;s energy and convenience retail business. Spearheaded digital marketing and communications strategy, managed the full promotional cycle, and maintained product range across multiple categories. Responsible for c-store product promotions &mdash; from range planning and supplier relationships through to physical in-store execution including POS materials, shelf wobblers, posters, and promotional assets. Categories managed included c-store snacks and beverages, forecourt products (firewood, gas bottles, ice), and specialty items (flowers, newspapers). This end-to-end product marketing experience &mdash; from commercial planning through to physical retail execution &mdash; is a distinct capability that bridges brand marketing with operational retail.</p>
+          </div>
+        </div>
+
+        <!-- Project tiles -->
+        <div class="projects-section">
+          <p class="projects-label">Key projects</p>
+          <div class="projects-grid">
+
+            <!-- Tile 1: Wild Bean Cafe -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--1">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">Wild Bean Cafe</span>
+                  <img src="images/bp-wbc-healthcare.png" alt="Wild Bean Cafe healthcare workers campaign" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">Brand &amp; Campaign Marketing</p>
+                <h5 class="tile-title">Wild Bean Cafe</h5>
+                <p class="tile-desc">Enhanced brand visibility and market reach through targeted digital content creation, promotional cycle management, and strategic campaigns. Delivered measurable commercial outcomes across the national network. Led community-driven initiatives including the healthcare workers free coffee campaign during COVID-19, which drove significant earned media and brand sentiment.</p>
+                <div class="tile-chips">
+                  <span class="tile-chip">+17% Cafe sales</span>
+                  <span class="tile-chip">+15% C-store sales</span>
+                  <span class="tile-chip">+3% Coffee sales</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tile 2: BP Run -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--2">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">BP Run &mdash; In-store</span>
+                  <img src="images/bp-run-instore.png" alt="BP Run in-store campaign" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">BP Run &mdash; Influencer</span>
+                  <img src="images/bp-run-influencer.png" alt="BP Run influencer campaign" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">Influencer &amp; Digital Campaign</p>
+                <h5 class="tile-title">BP Run &mdash; 100th Birthday Campaign</h5>
+                <p class="tile-desc">Pioneered BP&#39;s first-ever influencer marketing campaign to launch the BP Run mobile game, celebrating BP&#39;s 100th birthday in Australia. Directed 300+ micro-influencers across Instagram and Facebook, developed creative briefs, managed influencer relationships, and oversaw content approval. Created and distributed in-store POS materials, shelf wobblers, and digital assets. Managed supplier and vendor communications throughout.</p>
+                <div class="tile-chips">
+                  <span class="tile-chip">300+ Influencers</span>
+                  <span class="tile-chip">324% Brand search growth</span>
+                  <span class="tile-chip">250,000+ Prizes</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tile 3: Couchfood -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--2">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">Couchfood &mdash; Valentine&#39;s Day</span>
+                  <img src="images/bp-couchfood-vday.png" alt="Couchfood Valentines Day campaign" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">Couchfood &mdash; Launch</span>
+                  <img src="images/bp-couchfood-launch.png" alt="Couchfood launch" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">New Business Stream Launch</p>
+                <h5 class="tile-title">Couchfood by BP</h5>
+                <p class="tile-desc">Key player in launching Couchfood &mdash; BP&#39;s grocery home-delivery sub-brand built in partnership with Uber Eats and Deliveroo. Supported project management, range development, and staff training during the trial phase across the network. Following launch, developed the full communications strategy, content management system, promotional cycle planning, and campaign execution. Managed collaborations and affiliations to drive awareness and adoption.</p>
+                <div class="tile-chips"></div>
+              </div>
+            </div>
+
+            <!-- Tile 4: BP x David Jones -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--2">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">BP &times; David Jones Opening</span>
+                  <img src="images/bp-david-jones-opening.png" alt="BP David Jones store opening" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">BP &times; David Jones Food</span>
+                  <img src="images/bp-david-jones-food.png" alt="BP David Jones food range" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">Strategic Retail Partnership</p>
+                <h5 class="tile-title">BP &times; David Jones</h5>
+                <p class="tile-desc">Supported the high-profile strategic partnership combining David Jones Food&#39;s exclusive product range with BP&#39;s convenience retail network. Led range analysis and promotional structure creation. Produced social media content, supplier and vendor email campaigns, internal communications, and creative in-store materials for the partnership launch across Melbourne locations.</p>
+                <div class="tile-chips"></div>
+              </div>
+            </div>
+
+            <!-- Tile 5: C-store Product Marketing -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--1">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">C-store Product Marketing</span>
+                  <img src="images/bp-doritos.png" alt="BP Doritos c-store promotion" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">Product Range &amp; Promotional Execution</p>
+                <h5 class="tile-title">C-store Product Marketing</h5>
+                <p class="tile-desc">Managed the full promotional lifecycle for BP&#39;s c-store product range &mdash; a capability that bridges brand marketing with commercial retail operations. Responsibilities included range planning, supplier relationship management, promotional calendar execution, and physical in-store asset production. Created and distributed POS materials, shelf wobblers, and print assets for product promotions across the national network. Product categories spanned c-store snacks and beverages, forecourt products (firewood, gas bottles, ice), and specialty items including flowers and newspapers.</p>
+                <div class="tile-chips"></div>
+              </div>
+            </div>
+
+            <!-- Tile 6: Flagship Store Launches -->
+            <div class="project-tile">
+              <div class="tile-images tile-images--1">
+                <div class="tile-img-wrap">
+                  <span class="img-fallback">Flagship Store Launches</span>
+                  <img src="images/bp-flagship-store.png" alt="BP flagship store launch" onerror="this.closest('.tile-img-wrap').classList.add('img-error')">
+                </div>
+              </div>
+              <div class="tile-body">
+                <p class="tile-tag">Network Development &amp; Operations</p>
+                <h5 class="tile-title">Flagship Store Launches</h5>
+                <p class="tile-desc">As Business Manager, provided operational marketing support for BP&#39;s physical network development across Greater Sydney. Supported fuel station and retail store construction projects from planning through to launch, ensuring brand consistency, POS execution, and promotional readiness at each new location. Managed distribution and retail setup across 20 stores.</p>
+                <div class="tile-chips"></div>
+              </div>
+            </div>
+
+          </div><!-- .projects-grid -->
+        </div><!-- .projects-section -->
+      </div><!-- .card-expand-inner -->
+    </div><!-- .card-expand-area -->
+  </div><!-- #card-bp -->
+
+  <!-- CARD 2: COINFLIP (placeholder, not expandable) -->
+  <div class="work-card fade-in">
+    <div class="card-header">
+      <div class="card-strip">
+        <span class="card-strip-text">CoinFlip</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag-row">
+          <span class="card-tag">Melbourne, AU &middot; July 2024 &ndash; Present</span>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <h3 class="card-title">CoinFlip</h3>
+        <p class="card-desc">Marketing Manager for the AU &amp; NZ region. Full case study and campaign work coming soon.</p>
+        <p class="card-stats">+75% Customer acquisition &nbsp;&middot;&nbsp; $3M Budget owned &nbsp;&middot;&nbsp; $400K+ B2B pipeline &nbsp;&middot;&nbsp; 1,700 App downloads</p>
       </div>
     </div>
   </div>
 
-  <!-- BP Run -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">BP Run</div>
-      <div class="project-category">BP / Campaign</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>To celebrate BP's 100th birthday, the business launched BP Run — a mobile game encouraging fuellers to shop in-store for the chance to win over 250,000 prizes.</p>
-        <p>Responsible for the full marketing and promotional support surrounding the game launch.</p>
+  <!-- CARD 3: iSPRING (placeholder, not expandable) -->
+  <div class="work-card fade-in">
+    <div class="card-header">
+      <div class="card-strip">
+        <span class="card-strip-text">iSpring Solutions</span>
       </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Social media campaign</li>
-          <li>Influencer campaign</li>
-          <li>Content for internal use</li>
-          <li>Content for external use &amp; PR</li>
-          <li>Supplier &amp; vendor comms</li>
-          <li>Creative in-store POS</li>
-        </ul>
+      <div class="card-body">
+        <div class="card-tag-row">
+          <span class="card-tag">Dubai, UAE &middot; Sep 2022 &ndash; Jun 2024</span>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <h3 class="card-title">iSpring Solutions</h3>
+        <p class="card-desc">Marketing Manager for ANZ and APAC markets. Full case study and campaign work coming soon.</p>
+        <p class="card-stats">+14% Sales YoY &nbsp;&middot;&nbsp; +19% MQLs &nbsp;&middot;&nbsp; Market entry strategy</p>
       </div>
     </div>
   </div>
 
-  <!-- Couchfood -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Couchfood</div>
-      <div class="project-category">BP / Sub-brand Launch</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>Couchfood is a grocery home-delivery service operating through BP's petrol convenience store network. The sub-brand launched in 2018 with Uber Eats and Deliveroo.</p>
-        <p>Supported project management, range development, and staff training during the trial — then led dedicated communications strategy post-launch.</p>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Communications strategy</li>
-          <li>Content management &amp; production</li>
-          <li>Promotional cycle management</li>
-          <li>Campaign planning</li>
-          <li>Collaborations &amp; affiliations</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- BP x David Jones -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">BP × David Jones</div>
-      <div class="project-category">BP / Partnership</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>A strategic partnership combining David Jones Food's exclusive, high-quality product range with BP's global expertise in convenience retailing.</p>
-        <p>Led an extensive range analysis and built the promotional structure supporting the partnership.</p>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Social media content</li>
-          <li>Content for internal use</li>
-          <li>Content for external use &amp; PR</li>
-          <li>Supplier &amp; vendor email campaign</li>
-          <li>Creative in-store materials</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Jemena Winter Gas Rewards -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Winter Gas Rewards</div>
-      <div class="project-category">Jemena Networks / Campaign</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>A multi-funnel marketing campaign for Jemena Networks targeting customers transitioning to energy-efficient appliances, encouraging the switch from outdated gas appliances.</p>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Organic &amp; paid activity</li>
-          <li>Affiliate support</li>
-          <li>Trade promotional engagement</li>
-          <li>TV and radio advertising</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Renewable Gas -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Renewable Gas</div>
-      <div class="project-category">Jemena / Initiative</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>A long-term project aiming to deliver renewable hydrogen gas to Australian households. Created and delivered a full communications strategy for the green gas initiative launch.</p>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>PR announcements</li>
-          <li>Website content</li>
-          <li>Social media content</li>
-          <li>Affiliate marketing</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- FREELANCE -->
-<section id="freelance">
+<!-- ================================================================
+     ALL OTHER EXPERIENCE
+================================================================ -->
+<section id="experience">
   <div class="section-header fade-in">
-    <span class="section-number">03 / Freelance</span>
-    <h2 class="section-title">Independent work</h2>
+    <span class="section-number">03 / Experience</span>
+    <h2 class="section-title">Everything else</h2>
   </div>
-
-  <!-- Rove -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Rove</div>
-      <div class="project-category">Fashion / Byron Bay</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>A consciously made fashion label based in Byron Bay, producing garments from plant-based eco-friendly fibres via a female-run atelier. Collaborated on social media strategy and e-commerce performance campaigns.</p>
-        <div class="project-task" style="margin-top:1rem">Key task</div>
-        <p style="font-size:0.85rem; color:var(--mid)">Drive pre-orders vs direct product sales</p>
-        <div class="project-results">
-          <div class="result-stat"><span class="result-value">+19%</span><span class="result-label">Engagement</span></div>
-          <div class="result-stat"><span class="result-value">+24%</span><span class="result-label">Reach</span></div>
-          <div class="result-stat"><span class="result-value">0.52</span><span class="result-label">CPC</span></div>
-          <div class="result-stat"><span class="result-value">18%</span><span class="result-label">Open rate</span></div>
-        </div>
+  <div class="experience-list">
+    <div class="exp-row fade-in">
+      <div class="exp-left">
+        <span class="exp-company">Jemena</span>
+        <span class="exp-role-date">Marketing Coordinator &middot; Dec 2021 &ndash; Jul 2022</span>
       </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>UGC-centric content strategy</li>
-          <li>Email marketing campaign</li>
-          <li>Paid Facebook ads</li>
-        </ul>
+      <div class="exp-right">
+        <p class="exp-desc">Led $500K Winter Gas Rewards campaign across TV, radio, Meta ads, SEO and social</p>
+        <span class="exp-stat">4,000+ MQLs</span>
       </div>
     </div>
-  </div>
-
-  <!-- iSpring -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">iSpring</div>
-      <div class="project-category">E-learning / ANZ &amp; APAC</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>Global e-learning platform expanding into ANZ and APAC markets. Led the strategic market entry approach, from landing page localisation through to paid performance campaigns.</p>
-        <div class="project-task" style="margin-top:1rem">Key task</div>
-        <p style="font-size:0.85rem; color:var(--mid)">Drive lead growth in a new market</p>
-        <div class="project-results">
-          <div class="result-stat"><span class="result-value">6.72</span><span class="result-label">Conv. rate</span></div>
-          <div class="result-stat"><span class="result-value">31.2</span><span class="result-label">CPL</span></div>
-          <div class="result-stat"><span class="result-value">2.4</span><span class="result-label">CTR</span></div>
-          <div class="result-stat"><span class="result-value">12%</span><span class="result-label">Open rate</span></div>
-        </div>
+    <div class="exp-row fade-in" style="transition-delay:0.05s">
+      <div class="exp-left">
+        <span class="exp-company">Cygnett</span>
+        <span class="exp-role-date">Freelance Marketing Consultant &middot; 2023</span>
       </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Landing page optimisation</li>
-          <li>Email marketing campaigns (ANZ &amp; APAC)</li>
-          <li>PPC paid ads</li>
-          <li>Facebook community management</li>
-          <li>Blog content strategy</li>
-        </ul>
+      <div class="exp-right">
+        <p class="exp-desc">Full long-term marketing strategy, website relaunch, loyalty program and email launch for Australian tech accessories brand</p>
+        <span class="exp-stat">1,000+ UGC pieces</span>
       </div>
     </div>
-  </div>
-
-  <!-- Sunflower Corp -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Sunflower Corp</div>
-      <div class="project-category">Crypto / Web3</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>A self-funded crypto trading exchange startup requiring a social media strategy to build digital presence from scratch — community building, marketing activations, and collaborations.</p>
-        <div class="project-task" style="margin-top:1rem">Key task</div>
-        <p style="font-size:0.85rem; color:var(--mid)">Establish digital presence</p>
-        <div class="project-results">
-          <div class="result-stat"><span class="result-value">+82</span><span class="result-label">Twitter followers</span></div>
-          <div class="result-stat"><span class="result-value">+45</span><span class="result-label">Medium followers</span></div>
-        </div>
+    <div class="exp-row fade-in" style="transition-delay:0.1s">
+      <div class="exp-left">
+        <span class="exp-company">Mazari Villas</span>
+        <span class="exp-role-date">Freelance &middot; 2022&ndash;2023</span>
       </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Medium blog &amp; content strategy</li>
-          <li>Cross-platform content plan</li>
-          <li>Affiliations &amp; partnerships</li>
-          <li>Community engagement</li>
-        </ul>
+      <div class="exp-right">
+        <p class="exp-desc">Brand identity and full marketing strategy for luxury sustainable villa development in Bali. Sales directly attributed to targeted social strategy.</p>
+        <span class="exp-stat">Sold out in 3 months</span>
+      </div>
+    </div>
+    <div class="exp-row fade-in" style="transition-delay:0.15s">
+      <div class="exp-left">
+        <span class="exp-company">Rove Byron Bay</span>
+        <span class="exp-role-date">Freelance &middot; 2022</span>
+      </div>
+      <div class="exp-right">
+        <p class="exp-desc">Social media strategy and e-commerce performance campaigns for conscious fashion label shipping worldwide</p>
+        <span class="exp-stat">+24% Reach</span>
+      </div>
+    </div>
+    <div class="exp-row fade-in" style="transition-delay:0.2s">
+      <div class="exp-left">
+        <span class="exp-company">Sunflower Corp</span>
+        <span class="exp-role-date">Freelance &middot; 2022</span>
+      </div>
+      <div class="exp-right">
+        <p class="exp-desc">Digital presence establishment and community building for self-funded cryptocurrency trading exchange startup</p>
+        <span class="exp-stat">+82% Twitter growth</span>
+      </div>
+    </div>
+    <div class="exp-row fade-in" style="transition-delay:0.25s">
+      <div class="exp-left">
+        <span class="exp-company">UGG</span>
+        <span class="exp-role-date">Business Manager &middot; Jan 2014 &ndash; Mar 2016</span>
+      </div>
+      <div class="exp-right">
+        <p class="exp-desc">Managed retail chain of 11 stores with consistent average monthly turnover of $1.2M through effective sales and operational management</p>
+        <span class="exp-stat">$1.2M Monthly turnover</span>
       </div>
     </div>
   </div>
-
-  <!-- Mazari Villas -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Mazari Villas</div>
-      <div class="project-category">Luxury Property / Bali</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>Luxury sustainable villa development in Bali. Created brand identity and full marketing strategy, with properties sold out within 3 months of launch — sales directly attributed to the targeted social media strategy.</p>
-        <div class="project-task" style="margin-top:1rem">Key task</div>
-        <p style="font-size:0.85rem; color:var(--mid)">Brand identity and marketing strategy</p>
-        <div class="project-results">
-          <div class="result-stat"><span class="result-value">Sold out</span><span class="result-label">Within 3 months</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Targeted visual &amp; written content</li>
-          <li>Paid social media campaigns</li>
-          <li>Local SEO collaboration</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cygnett -->
-  <div class="project fade-in">
-    <div class="project-meta">
-      <div class="project-client">Cygnett</div>
-      <div class="project-category">Tech Accessories / Australia</div>
-    </div>
-    <div class="project-body">
-      <div class="project-desc">
-        <p>Australian tech accessories brand seeking to boost brand recognition and engagement. Created the complete long-term marketing strategy and launched three key initial projects: loyalty, brand build, and conversion.</p>
-        <div class="project-task" style="margin-top:1rem">Key tasks</div>
-        <p style="font-size:0.85rem; color:var(--mid)">Major brand campaign, website relaunch, email &amp; loyalty launch</p>
-      </div>
-      <div>
-        <div class="project-task">Deliverables</div>
-        <ul class="project-deliverables">
-          <li>Brand campaign with Olympian Lauren Jackson</li>
-          <li>Mass outreach influencer campaign (1000+ pieces of content)</li>
-          <li>E-commerce website relaunch &amp; UX</li>
-          <li>Strategic automated EDM campaign</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
 </section>
 
-<!-- CONTACT -->
+<!-- ================================================================
+     CONTACT
+================================================================ -->
 <section id="contact">
   <div class="section-header fade-in">
     <span class="section-number">04 / Contact</span>
-    <h2 class="section-title">Get in touch</h2>
+    <h2 class="section-title">Let&#39;s work together</h2>
   </div>
-  <div class="contact-inner fade-in">
-    <div class="contact-left">
-      <p style="font-family:var(--serif); font-size:1.3rem; font-weight:300; color:var(--mid); line-height:1.6;">Open to new opportunities, collaborations, and interesting projects.</p>
+  <div class="contact-body">
+    <div class="contact-left fade-in">
+      <p class="contact-tagline">Open to new opportunities, collaborations, and interesting projects.</p>
     </div>
-    <div class="contact-right">
+    <div class="contact-right fade-in" style="transition-delay:0.1s">
       <div class="contact-line">
         <span class="contact-type">Email</span>
         <a href="mailto:a-lebedeva@hotmail.com" class="contact-value">a-lebedeva@hotmail.com</a>
@@ -843,27 +1174,43 @@
       </div>
       <div class="contact-line">
         <span class="contact-type">LinkedIn</span>
-        <a href="https://linkedin.com/in/lebedevaanna" target="_blank" class="contact-value">linkedin.com/in/lebedevaanna</a>
+        <a href="https://linkedin.com/in/lebedevaanna" target="_blank" rel="noopener noreferrer" class="contact-value">linkedin.com/in/lebedevaanna</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ================================================================
+     FOOTER
+================================================================ -->
 <footer>
-  <span>Anna Lebedeva — Digital Marketing Strategy &amp; Solutions</span>
-  <span>Melbourne, Australia</span>
+  <span class="footer-text">Anna Lebedeva &mdash; Marketing Manager</span>
+  <span class="footer-text">Melbourne, Australia</span>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+  // BP card expand/collapse
+  function toggleCard(id) {
+    var card = document.getElementById(id);
+    var expanded = card.classList.toggle('is-expanded');
+    var btn = card.querySelector('[role="button"]');
+    if (btn) btn.setAttribute('aria-expanded', String(expanded));
+  }
+
+  // Fade-in on scroll via IntersectionObserver
+  var fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    fadeObserver.observe(el);
+  });
 </script>
+
 </body>
 </html>
