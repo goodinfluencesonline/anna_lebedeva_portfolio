@@ -1,0 +1,50 @@
+/* ================================================================
+   SERVICES — pillar grid section only.
+   .pillar-card extends .grid-cell from globals.css.
+   .pillar-full-name extends .label-mono.
+   .pillar-desc extends .body-text.
+   Depends on: tokens.css, globals.css (.grid-cell, .label-mono, .body-text)
+================================================================ */
+
+#services {
+  border-top: 0.5px solid var(--border);
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* .pillar-card extends .grid-cell */
+.pillar-card {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pillar-card:nth-child(2n)       { border-right: none; }
+.pillar-card:nth-last-child(-n+2) { border-bottom: none; }
+
+.pillar-display {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  margin-bottom: 0.4rem;
+}
+
+/* .pillar-full-name extends .label-mono; overrides size + colour only */
+.pillar-full-name {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* .pillar-desc extends .body-text; overrides size + colour only */
+.pillar-desc {
+  font-size: 0.85rem;
+  color: var(--mid);
+}

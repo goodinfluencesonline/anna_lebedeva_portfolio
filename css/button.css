@@ -1,0 +1,24 @@
+/* ================================================================
+   BUTTON — CTA button variants only.
+   Both extend .btn-base from globals.css with size/spacing modifiers.
+   Depends on: tokens.css, globals.css (.btn-base)
+================================================================ */
+
+/* .btn-primary extends .btn-base */
+.btn-primary {
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  padding: 0.8rem 1.6rem;
+  margin-top: 2.5rem;
+  align-self: flex-start;
+}
+
+/* .btn-linkedin extends .btn-base */
+.btn-linkedin {
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 1rem 1.75rem;
+  align-self: flex-start;
+}

@@ -1,0 +1,24 @@
+/* ================================================================
+   BASE — browser reset and document-level defaults only.
+   Single responsibility: html + body + universal box model.
+   Depends on: tokens.css
+================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--black);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}

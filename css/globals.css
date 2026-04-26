@@ -1,0 +1,75 @@
+/* ================================================================
+   GLOBALS — shared utility classes only.
+   SOLID I: every rule here is consumed by 2+ component files.
+   Single-use rules must live in their owning component file.
+   Depends on: tokens.css
+================================================================ */
+
+/* ----------------------------------------------------------------
+   .label-mono
+   Shared by: nav, hero, numbers, companies, section-header,
+              services, work, archive, contact, footer (12 elements)
+---------------------------------------------------------------- */
+.label-mono {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ----------------------------------------------------------------
+   .btn-base
+   Shared by: button.css (.btn-primary, .btn-linkedin)
+   Component files extend this with size / spacing modifiers only.
+---------------------------------------------------------------- */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-base:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ----------------------------------------------------------------
+   .accent-mark
+   Shared by: numbers (.stat-number), work (.highlight, .skill-tag),
+              archive (.archive-result)
+   Override --mark-opacity and --mark-stop locally per component.
+---------------------------------------------------------------- */
+.accent-mark {
+  background: linear-gradient(
+    to top,
+    rgba(var(--accent-rgb), var(--mark-opacity, 0.18)) var(--mark-stop, 42%),
+    transparent var(--mark-stop, 42%)
+  );
+  padding: 0 0.1em;
+}
+
+/* ----------------------------------------------------------------
+   .body-text
+   Shared by: hero (.hero-subtext), services (.pillar-desc),
+              work (.case-text), archive (.archive-focus)
+---------------------------------------------------------------- */
+.body-text {
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ----------------------------------------------------------------
+   .grid-cell
+   Shared by: services (.pillar-card), archive (.archive-card)
+---------------------------------------------------------------- */
+.grid-cell {
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}

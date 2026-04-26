@@ -1,0 +1,22 @@
+/* ================================================================
+   TOKENS — design system values only.
+   No rules, selectors, or resets belong here.
+   All other CSS files must consume these via var().
+================================================================ */
+
+:root {
+  /* Colour palette */
+  --bg:           #FFFFFF;
+  --bg-alt:       #F8F8F7;
+  --black:        #0E0E0E;
+  --mid:          #7A7A7A;
+  --accent:       #2B52E0;
+  --accent-rgb:   43, 82, 224;
+  --border:       #E4E4E4;
+  --dark-card:    #0E0E0E;
+
+  /* Typography */
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --mono:   'DM Mono', monospace;
+  --sans:   'DM Sans', sans-serif;
+}

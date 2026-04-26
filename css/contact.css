@@ -1,0 +1,46 @@
+/* ================================================================
+   CONTACT — contact section only.
+   .contact-cta-label extends .label-mono.
+   Depends on: tokens.css, globals.css (.label-mono)
+================================================================ */
+
+#contact {
+  border-top: 0.5px solid var(--border);
+}
+
+.contact-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 0.5px solid var(--border);
+}
+
+.contact-left {
+  padding: 5rem 3rem;
+  border-right: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.contact-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 30ch;
+}
+
+.contact-right {
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+/* .contact-cta-label extends .label-mono; overrides size + colour only */
+.contact-cta-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+}

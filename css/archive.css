@@ -1,0 +1,85 @@
+/* ================================================================
+   ARCHIVE — archive grid section only.
+   .archive-card extends .grid-cell from globals.css.
+   .archive-section-label extends .label-mono.
+   .archive-tag extends .label-mono.
+   .archive-result extends .accent-mark.
+   .archive-focus extends .body-text.
+   Depends on: tokens.css, globals.css (.grid-cell, .label-mono, .accent-mark, .body-text)
+================================================================ */
+
+#archive {
+  border-top: 0.5px solid var(--border);
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* .archive-card extends .grid-cell */
+.archive-card {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: background 0.2s;
+}
+
+.archive-card:nth-child(2n)        { border-right: none; }
+.archive-card:nth-last-child(-n+2) { border-bottom: none; }
+.archive-card:last-child:nth-child(odd) { border-right: none; }
+.archive-card:hover                { background: rgba(var(--accent-rgb), 0.02); }
+
+.archive-company {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.archive-industry {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-top: 0.1rem;
+}
+
+/* .archive-section-label extends .label-mono; overrides size + colour only */
+.archive-section-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+  margin-top: 0.25rem;
+}
+
+/* .archive-focus extends .body-text; overrides size only */
+.archive-focus {
+  font-size: 0.82rem;
+  color: var(--black);
+  line-height: 1.72;
+}
+
+/* .archive-result extends .accent-mark; adds display + line-height */
+.archive-result {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--black);
+  display: inline;
+  line-height: 2;
+}
+
+.archive-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+
+/* .archive-tag extends .label-mono; overrides size + colour only */
+.archive-tag {
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}

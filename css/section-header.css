@@ -1,0 +1,31 @@
+/* ================================================================
+   SECTION-HEADER — shared section header layout only.
+   Used by all four numbered sections (Services, Work, Archive, Contact).
+   .section-number extends .label-mono.
+   Depends on: tokens.css, globals.css (.label-mono)
+================================================================ */
+
+.section-header {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  padding: 2.5rem 3rem;
+  border-bottom: 0.5px solid var(--border);
+  align-items: end;
+  gap: 2rem;
+}
+
+/* .section-number extends .label-mono; overrides size + colour only */
+.section-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+  padding-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}

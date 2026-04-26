@@ -1,0 +1,134 @@
+/* ================================================================
+   WORK — case study cards section only.
+   .case-tag extends .label-mono.
+   .case-label extends .label-mono.
+   .case-text extends .body-text.
+   .highlight extends .accent-mark (--mark-opacity: 0.22, --mark-stop: 46%).
+   .skill-tag extends .accent-mark (--mark-opacity: 0.18, --mark-stop: 42%).
+   Depends on: tokens.css, globals.css (.label-mono, .body-text, .accent-mark)
+================================================================ */
+
+#work {
+  border-top: 0.5px solid var(--border);
+}
+
+.case-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.case-card:last-child {
+  border-bottom: none;
+}
+
+.case-strip {
+  background: var(--dark-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.case-strip-text {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.35);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.14em;
+}
+
+.case-body {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* .case-tag extends .label-mono; overrides size, colour, border only */
+.case-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border: 0.5px solid rgba(var(--accent-rgb), 0.35);
+  padding: 0.2rem 0.6rem;
+}
+
+.case-company {
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.case-company-sub {
+  font-weight: 300;
+  font-size: 0.7em;
+  color: var(--mid);
+}
+
+.case-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.case-section {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.case-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* .case-label extends .label-mono; overrides size + colour only */
+.case-label {
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--mid);
+  padding-top: 0.2rem;
+}
+
+/* .case-text extends .body-text; overrides size + colour only */
+.case-text {
+  font-size: 0.88rem;
+  color: var(--black);
+}
+
+/* .highlight extends .accent-mark; tunes gradient opacity + stop */
+.highlight {
+  --mark-opacity: 0.22;
+  --mark-stop: 46%;
+  font-weight: 400;
+}
+
+.case-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+/* .skill-tag extends .accent-mark; defaults are correct (0.18, 42%) */
+.skill-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  line-height: 2;
+}
